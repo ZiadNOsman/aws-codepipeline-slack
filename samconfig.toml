@@ -1,0 +1,12 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "aws-codepipeline-slack"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-ub6pax1vdu57"
+s3_prefix = "aws-codepipeline-slack"
+region = "eu-west-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+parameter_overrides = "SlackChannel=\"builds\" SlackBotName=\"PipelineBuildBot\" SlackBotIcon=\":robot_face:\""
+image_repositories = []

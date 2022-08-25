@@ -37,10 +37,10 @@ class MessageBuilder(object):
 
     def attachRevisionInfo(self, rev):
         if self.needsRevisionInfo() and rev:
-            if 'revisionUrl' in rev:
+            if 'revisionId' in rev:
                 self.fields.append({
                     "title": "Revision",
-                    "value": "<{}|{}: {}>".format(rev['revisionUrl'], rev['revisionId'][:7], rev['revisionSummary']),
+                    "value": rev['revisionId'],
                     "short": True
                 })
             else:

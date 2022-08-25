@@ -22,8 +22,7 @@ No configuration is necessary per pipeline.  As part of the CF Stack, we subscri
 
 Required parameters:
 
-- `SlackOAuthAccessToken`
-- `SlackOAuthAccessToken`
+- `SlackBotUserOAuthAccessToken`
 - `SlackChannel` (defaults to `builds`).
 - `SlackBotName` (defaults to `PipelineBuildBot`).
 - `SlackBotIcon` (defaults to `:robot_face:` 🤖 ).

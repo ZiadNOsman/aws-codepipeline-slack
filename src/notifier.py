@@ -9,7 +9,7 @@ import boto3
 # from test_events import TEST_EVENTS, TEST_ERROR_EVENTS
 from build_info import BuildInfo, CodeBuildInfo
 from message_builder import MessageBuilder
-from slack_helper import find_message_for_build, post_build_msg
+from slack_helper import find_message_for_build, post_build_msg, send_msg
 
 # import re
 # import sys
@@ -76,6 +76,12 @@ def processCodeBuild(event):
 
 
 def process(event):
+    if 'queryStringParameters' in event:
+        if "git-tag" in event['queryStringParameters']:
+            if event['queryStringParameters']['git-tag'] == "":
+                send_msg(ch=None, attachments=None, git_tag="not specified")
+            else:
+                send_msg(ch=None, attachments=None, git_tag=event['queryStringParameters']['git-tag'])
     if event['source'] == "aws.codepipeline":
         processCodePipeline(event)
     if event['source'] == "aws.codebuild":
