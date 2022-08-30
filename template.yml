@@ -25,8 +25,8 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Runtime: python3.7
-      FunctionUrlConfig:
-        AuthType: NONE #AWS_IAM for security
+#       FunctionUrlConfig:
+#         AuthType: NONE #AWS_IAM for security
       Timeout: 30
       MemorySize: 256
       CodeUri: src/
